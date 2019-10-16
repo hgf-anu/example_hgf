@@ -18,15 +18,14 @@ public class FlowDriver {
         job.setMapperClass(FlowMapper.class);
         job.setReducerClass(FlowReducer.class);
 
-        job.setOutputKeyClass(FlowBean.class);
+        job.setMapOutputKeyClass(FlowBean.class);
         job.setMapOutputValueClass(Text.class);
-
-        job.setMapOutputKeyClass(Text.class);
 
         //设置分组比较器
         job.setGroupingComparatorClass(FlowComparator.class);
 
-        job.setMapOutputValueClass(FlowBean.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(FlowBean.class);
 
         FileInputFormat.setInputPaths(job, new Path("d:\\input"));
         FileOutputFormat.setOutputPath(job, new Path("d:\\output"));
