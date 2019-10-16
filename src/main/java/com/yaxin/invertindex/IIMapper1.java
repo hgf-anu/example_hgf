@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class IIMapper1 extends Mapper<LongWritable, Text, Text, IntWritable> {
     private Text k = new Text();
-    private IntWritable v = new IntWritable();
+    private IntWritable v = new IntWritable(1);
     private String filename;
 
     /**
